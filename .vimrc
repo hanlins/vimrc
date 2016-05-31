@@ -72,6 +72,12 @@ function! NumberToggle()
 endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
 
+"""" SWITCH BETWEEN SPLITS ('ctrl+{h,j,k,l}')
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 """" HIGHLIGHT CURRENT LINE ('\c' in normal mode)
 set cursorline
 hi CursorLine   cterm=bold ctermbg=DarkBlue guibg=darkred
