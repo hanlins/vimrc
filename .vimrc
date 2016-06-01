@@ -4,6 +4,11 @@
 """" @version:		v1.0
 
 """" USE VUNDLE TO MANAGE PLUGINS
+"" 1. INSTALL vundle:
+"" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+"" 2. INSTALL PLUGIN
+"" :PluginInstall
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
