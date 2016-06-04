@@ -1,7 +1,7 @@
 """" @filename:		.vimrc 
-"""" @date:		2015-8-30
+"""" @date:		2016-06-4
 """" @author:		Hanlin Shi
-"""" @version:		v1.0
+"""" @version:		v1.1
 
 """" USE VUNDLE TO MANAGE PLUGINS
 set nocompatible              " be iMproved, required
@@ -12,12 +12,12 @@ Plugin 'VundleVim/Vundle.vim'
 "" plugin on GitHub repo
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
+Plugin 'vim-airline/vim-airline'
+Plugin 'tpope/vim-fugitive'
 "" plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'ZoomWin'
-Plugin 'vim-airline/vim-airline'
-Plugin 'tpope/vim-fugitive'
 "" Git plugin not hosted on GitHub
 " Plugin 'git://git.wincent.com/command-t.git'
 "" git repos on your local machine (i.e. when working on your own plugin)
