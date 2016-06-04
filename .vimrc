@@ -4,11 +4,6 @@
 """" @version:		v1.0
 
 """" USE VUNDLE TO MANAGE PLUGINS
-"" 1. INSTALL vundle:
-"" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-"" 2. INSTALL PLUGIN
-"" :PluginInstall
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -21,6 +16,9 @@ Plugin 'majutsushi/tagbar'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'ZoomWin'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-fugitive'
 "" Git plugin not hosted on GitHub
 " Plugin 'git://git.wincent.com/command-t.git'
 "" git repos on your local machine (i.e. when working on your own plugin)
@@ -89,3 +87,23 @@ hi CursorLine   cterm=bold ctermbg=DarkBlue guibg=darkred
 hi CursorColumn cterm=bold ctermbg=DarkBlue guibg=darkred
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
+"""" DISPLAY ALL OPEN BUFFERS
+set laststatus=2
+set ttimeoutlen=50
+set t_Co=256
+let g:airline_theme='dark'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+let g:airline_detect_modified=1
+let g:airline_detect_paste=1
+let g:airline_detect_spell=1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#hunks#enabled=0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+
+"""" KEYBINDS TO SWITCH BETWEEN TABS <'ctrl+{P,N}'>
+nnoremap <C-N> :bn<CR>
+nnoremap <C-P> :bp<CR>
