@@ -67,7 +67,7 @@ inoremap <tab> <c-r>=Smart_TabComplete()<CR>
 """" RELATIVE LINE NUMBERS ('ctrl+n' in normal mode)
 function! NumberToggle()
 	if(&relativenumber == 1)
-		set number
+		set norelativenumber
 	else
 		set relativenumber
 	endif
@@ -103,6 +103,6 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
-"""" KEYBINDS TO SWITCH BETWEEN TABS <'ctrl+{P,N}'>
-nnoremap <C-N> :bn<CR>
-nnoremap <C-P> :bp<CR>
+"""" KEYBINDS TO SWITCH BETWEEN TABS <'ctrl+{E,Q}'>
+"nnoremap <C-E> :bn<CR>
+"nnoremap <C-Q> :bp<CR>
