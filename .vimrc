@@ -17,7 +17,6 @@ Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'ZoomWin'
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
 "" Git plugin not hosted on GitHub
 " Plugin 'git://git.wincent.com/command-t.git'
