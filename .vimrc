@@ -1,7 +1,7 @@
 """" @filename:		.vimrc 
 """" @date:		2016-06-4
 """" @author:		Hanlin Shi
-"""" @version:		v1.1
+"""" @version:		v1.11
 
 """" USE VUNDLE TO MANAGE PLUGINS
 set nocompatible              " be iMproved, required
