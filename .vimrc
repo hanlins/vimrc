@@ -1,9 +1,13 @@
 """" @filename:		.vimrc 
 """" @date:		2016-06-4
 """" @author:		Hanlin Shi
-"""" @version:		v1.12
+"""" @version:		v1.1.3
 
 """" USE VUNDLE TO MANAGE PLUGINS
+"" First time user should install vundle before using, please clone vundle repo
+"" to appropriate location:
+"" git clone https://github.com/VundleVim/Vundle.vim.git~/.vim/bundle/Vundle.vim
+"" then get into vim, and typein ':PluginInstall' to install required plugins.
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -91,7 +95,7 @@ nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
 """" DISPLAY ALL OPEN BUFFERS
 set laststatus=2
-set ttimeoutlen=10
+set ttimeoutlen=25
 set t_Co=256
 let g:airline_theme='dark'
 let g:airline_left_sep = '▶'
@@ -113,9 +117,17 @@ nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
 
 """" SYNTAX HIGHLIGHT FOR GOLANG (syntax file 'go.vim' stored on ~/.vim/syntax/)
+"" golang syntax file can be find at:
+"" http://www.vim.org/scripts/script.php?script_id=2854
 filetype on
 au BufRead,BufNewFile *.go set filetype=go
 
 """" COLOR THEME
 colorscheme gruvbox
-set background=dark    " Setting dark mode
+set background=dark    " Setting dark mode, alternative one is "light"
+"let g:gruvbox_contrast="hard"
+
+"""" BUFFER OPERATIONS
+" :bn				" next buffer
+" :bp				" previous buffer
+" :b#				" buffer number '#'
