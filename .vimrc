@@ -1,7 +1,7 @@
 """" @filename:		.vimrc 
 """" @date:		2016-06-4
 """" @author:		Hanlin Shi
-"""" @version:		v1.11
+"""" @version:		v1.12
 
 """" USE VUNDLE TO MANAGE PLUGINS
 set nocompatible              " be iMproved, required
@@ -14,6 +14,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
+Plugin 'fatih/vim-go'
+Plugin 'morhetz/gruvbox'
 "" plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
 Plugin 'FuzzyFinder'
@@ -36,6 +38,7 @@ set ttymouse=xterm2
 set noswapfile						" Disable backup file
 nmap <F8> :TagbarToggle<CR>				" Use F8 to use tagbar
 2mat ErrorMsg '\%80v.'					" Highlight after 80 chars
+set rtp+=$GOROOT/misc/vim				" Syntax Highlight for Go
 
 """" For the Java Course, use 4 space to replace TAB
 au FileType java set tabstop=4 shiftwidth=4 expandtab
@@ -88,7 +91,7 @@ nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
 """" DISPLAY ALL OPEN BUFFERS
 set laststatus=2
-set ttimeoutlen=50
+set ttimeoutlen=10
 set t_Co=256
 let g:airline_theme='dark'
 let g:airline_left_sep = '▶'
@@ -103,6 +106,16 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
-"""" KEYBINDS TO SWITCH BETWEEN TABS <'ctrl+{E,Q}'>
-"nnoremap <C-E> :bn<CR>
-"nnoremap <C-Q> :bp<CR>
+"""" KEYBINDS TO SWITCH BETWEEN TABS <'ctrl+{A,D}'>
+nmap <C-A> :tabprevious<CR>
+nmap <C-D> :tabnext<CR>
+nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
+
+"""" SYNTAX HIGHLIGHT FOR GOLANG (syntax file 'go.vim' stored on ~/.vim/syntax/)
+filetype on
+au BufRead,BufNewFile *.go set filetype=go
+
+"""" COLOR THEME
+colorscheme gruvbox
+set background=dark    " Setting dark mode
