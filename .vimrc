@@ -16,6 +16,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'ZoomWin'
+Plugin 'vim-airline/vim-airline'
 "" Git plugin not hosted on GitHub
 " Plugin 'git://git.wincent.com/command-t.git'
 "" git repos on your local machine (i.e. when working on your own plugin)
