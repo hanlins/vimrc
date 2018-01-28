@@ -1,11 +1,24 @@
 [user]
 	name = Hanlin Shi
-	email = hanlins@andrew.cmu.edu
+	email = hanlins@vmware.com
 [diff]
 	tool = vimdiff
 [merge]
 	tool = vimdiff
+
+[remote "review"]
+    url = ssh://hanlins@gitreview.eng.vmware.com:29418/nsx-qe
+    fetch = +refs/heads/*:refs/remotes/review/*
+
 [alias]
 	lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
 	lg = !"git lg1"
+	    stat = status -s -uno
+	logs = log --name-only
+	update = pull --rebase
+	addreview = "! git remote add review ssh://hanlins@gitreview.eng.vmware.com:29418/$(git config --get remote.origin.url | sed 's#.*/##')"
+	pushreview =  "! git push ssh://hanlins@gitreview.eng.vmware.com:29418/$(git config --get remote.origin.url | sed 's#.*/##; s#.git$##')  HEAD:refs/for/$(git rev-parse --abbrev-ref HEAD)"
+	pushmaster =  "! git push ssh://hanlins@gitreview.eng.vmware.com:29418/$(git config --get remote.origin.url | sed 's#.*/##; s#.git$##')  HEAD:refs/for/master"
+[core]
+	editor = /usr/bin/vim

@@ -6,7 +6,7 @@
 """" USE VUNDLE TO MANAGE PLUGINS
 "" First time user should install vundle before using, please clone vundle repo
 "" to appropriate location:
-"" git clone https://github.com/VundleVim/Vundle.vim.git~/.vim/bundle/Vundle.vim
+"" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 "" then get into vim, and typein ':PluginInstall' to install required plugins.
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -24,6 +24,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'ZoomWin'
+Plugin 'wting/rust.vim'
 "" Git plugin not hosted on GitHub
 " Plugin 'git://git.wincent.com/command-t.git'
 "" git repos on your local machine (i.e. when working on your own plugin)
