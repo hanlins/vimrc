@@ -137,3 +137,4 @@ set background=dark    " Setting dark mode, alternative one is "light"
 
 """" USE 'ctrl+c' TO COPY TO SYSTEM CLIPBOARD
 map <silent> <C-C> :<CR>:let @a=@" \| execute "normal! vgvy" \| let res=system("pbcopy", @") \| let @"=@a<CR>
+map <C-P> :r !pbpaste<CR>
