@@ -39,7 +39,9 @@ filetype plugin indent on  				" Indentation on
 syntax on 						" Syntax highlighted
 set number 						" Line number labeled
 set mouse=a 						" Mouse enabled
-set ttymouse=xterm2
+if !has('nvim')
+	set ttymouse=xterm2
+endif
 set noswapfile						" Disable backup file
 nmap <F8> :TagbarToggle<CR>				" Use F8 to use tagbar
 2mat ErrorMsg '\%80v.'					" Highlight after 80 chars
