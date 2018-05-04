@@ -132,3 +132,6 @@ set background=dark    " Setting dark mode, alternative one is "light"
 " :bn				" next buffer
 " :bp				" previous buffer
 " :b#				" buffer number '#'
+
+"""" USE 'ctrl+c' TO COPY TO SYSTEM CLIPBOARD
+map <C-C> :.w !pbcopy<CR><CR>
