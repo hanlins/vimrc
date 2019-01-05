@@ -11,4 +11,7 @@ got your git, vim and tmux installed, then clone the 'Vundle' repository:
 `$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 Then open vim, typein ':PluginInstall' to install required plugins.
 
+When using vim(nvim), it suppose to leverage vim-go and you need to run
+`GoInstallBinaries` to install the binaries required.
+
 Have fun.
