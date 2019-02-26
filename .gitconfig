@@ -21,4 +21,4 @@
 	pushreview =  "! git push ssh://hanlins@gitreview.eng.vmware.com:29418/$(git config --get remote.origin.url | sed 's#.*/##; s#.git$##')  HEAD:refs/for/$(git rev-parse --abbrev-ref HEAD)"
 	pushmaster =  "! git push ssh://hanlins@gitreview.eng.vmware.com:29418/$(git config --get remote.origin.url | sed 's#.*/##; s#.git$##')  HEAD:refs/for/master"
 [core]
-	editor = /usr/bin/vim
+	editor = vim
