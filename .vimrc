@@ -25,6 +25,8 @@ Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'ZoomWin'
 Plugin 'wting/rust.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'kien/ctrlp.vim'
 "" Git plugin not hosted on GitHub
 " Plugin 'git://git.wincent.com/command-t.git'
 "" git repos on your local machine (i.e. when working on your own plugin)
@@ -92,11 +94,12 @@ nnoremap <C-H> <C-W><C-H>
 
 """" HIGHLIGHT CURRENT LINE ('\c' in normal mode)
 set cursorline
-hi CursorLine   cterm=bold ctermbg=DarkBlue guibg=darkred
-hi CursorColumn cterm=bold ctermbg=DarkBlue guibg=darkred
+hi CursorLine   cterm=bold ctermbg=DarkGrey guibg=darkred
+hi CursorColumn cterm=bold ctermbg=DarkRed guibg=darkred
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
 """" DISPLAY ALL OPEN BUFFERS
+let g:go_version_warning = 0
 set laststatus=2
 set ttimeoutlen=25
 set t_Co=256
@@ -126,8 +129,8 @@ filetype on
 au BufRead,BufNewFile *.go set filetype=go
 
 """" COLOR THEME
-colorscheme gruvbox
-set background=dark    " Setting dark mode, alternative one is "light"
+" colorscheme gruvbox
+" set background=dark    " Setting dark mode, alternative one is "light"
 "let g:gruvbox_contrast="hard"
 
 """" BUFFER OPERATIONS
@@ -138,3 +141,22 @@ set background=dark    " Setting dark mode, alternative one is "light"
 """" USE 'ctrl+c' TO COPY TO SYSTEM CLIPBOARD
 map <silent> <C-C> :<CR>:let @a=@" \| execute "normal! vgvy" \| let res=system("pbcopy", @") \| let @"=@a<CR>
 map <C-P> :r !pbpaste<CR>
+
+"""" CtrlP SETUP
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+\}
+
+" USE THE NEAREST .git DIRECTORY AS THE CWD
+let g:ctrlp_working_path_mode = 'r'
+
+" USE A LEADER INSTEAD OF THE ACTUAL NAMED BINDING
+let g:ctrlp_map = '<c-f>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" EASY BINDINGS FOR ITS VARIOUS MODES
+nmap <leader>bb :CtrlPBuffer<cr>
+nmap <leader>bm :CtrlPMixed<cr>
+nmap <leader>bs :CtrlPMRU<cr>
+
