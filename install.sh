@@ -39,7 +39,11 @@ bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/bins
 echo "source /root/.gvm/scripts/gvm"
 source /root/.gvm/scripts/gvm
 gvm install go1.15.7 -B
-gvm use go.1.15.7
+gvm use go1.15.7
+
+echo "source /root/.gvm/scripts/gvm" >> ~/.zshrc
+echo "gvm use go1.15.7" >> ~/.zshrc
+echo 'alias vim="nvim"' >> ~/.zshrc
 
 # switch to zsh
 chsh -s $(which zsh)
