@@ -14,4 +14,9 @@ Then open vim, typein ':PluginInstall' to install required plugins.
 When using vim(nvim), it suppose to leverage vim-go and you need to run
 `GoInstallBinaries` to install the binaries required.
 
+To install it directly, try:
+```
+wget -qO - https://raw.githubusercontent.com/hanlins/vimrc/master/install.sh | bash -x
+```
+
 Have fun.
