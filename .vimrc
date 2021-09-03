@@ -127,6 +127,7 @@ nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
 "" http://www.vim.org/scripts/script.php?script_id=2854
 filetype on
 au BufRead,BufNewFile *.go set filetype=go
+au VimEnter *.go GoAutoTypeInfoToggle
 
 """" COLOR THEME
 " colorscheme gruvbox
