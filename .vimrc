@@ -25,7 +25,7 @@ Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'ZoomWin'
 Plugin 'wting/rust.vim'
-Plugin 'Valloric/YouCompleteMe'
+"" Plugin 'Valloric/YouCompleteMe'
 Plugin 'kien/ctrlp.vim'
 "" Git plugin not hosted on GitHub
 " Plugin 'git://git.wincent.com/command-t.git'
