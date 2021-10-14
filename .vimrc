@@ -25,8 +25,9 @@ Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'ZoomWin'
 Plugin 'wting/rust.vim'
-"" Plugin 'Valloric/YouCompleteMe'
-Plugin 'kien/ctrlp.vim'
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 "" Git plugin not hosted on GitHub
 " Plugin 'git://git.wincent.com/command-t.git'
 "" git repos on your local machine (i.e. when working on your own plugin)
@@ -127,7 +128,7 @@ nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
 "" http://www.vim.org/scripts/script.php?script_id=2854
 filetype on
 au BufRead,BufNewFile *.go set filetype=go
-au VimEnter *.go GoAutoTypeInfoToggle
+"" au VimEnter *.go GoAutoTypeInfoToggle
 
 """" COLOR THEME
 " colorscheme gruvbox
@@ -161,3 +162,7 @@ nmap <leader>bb :CtrlPBuffer<cr>
 nmap <leader>bm :CtrlPMixed<cr>
 nmap <leader>bs :CtrlPMRU<cr>
 
+" vim-go config
+let g:go_auto_sameids = 1
+let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10000,results:0'
+let g:go_auto_type_info = 1
