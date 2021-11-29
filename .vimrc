@@ -24,7 +24,9 @@ Plugin 'morhetz/gruvbox'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'ZoomWin'
-Plugin 'wting/rust.vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install() } }
+" Install coc: cd ~/.vim/bundle/coc.nvim/ && yarn install
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'kien/ctrlp.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -53,6 +55,17 @@ set rtp+=$GOROOT/misc/vim				" Syntax Highlight for Go
 """" For the Java Course, use 4 space to replace TAB
 au FileType java set tabstop=4 shiftwidth=4 expandtab
 au FileType c set tabstop=2 shiftwidth=2 expandtab
+
+"""" For Rust, use gd to go to definition
+call coc#add_extension(
+  \ 'coc-rust-analyzer',
+\ )
+autocmd FileType rust nmap <silent> gd <Plug>(coc-definition)
+autocmd FileType rust nmap <silent> gy <Plug>(coc-type-definition)
+autocmd FileType rust nmap <silent> gi <Plug>(coc-implementation)
+autocmd FileType rust nmap <silent> gr <Plug>(coc-references)
+let g:rustfmt_autosave = 1
+let g:rust_cargo_use_clippy = 1
 
 """" SWITCH WINDOW TO FULL-SIZE ('\\' in normal mode)
 nnoremap <silent> <Leader><Leader> :ZoomWin<CR>
