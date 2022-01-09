@@ -1,7 +1,7 @@
-"""" @filename:		.vimrc 
-"""" @date:		2016-06-4
-"""" @author:		Hanlin Shi
-"""" @version:		v1.1.3
+"""" @filename: .vimrc 
+"""" @date: 2022-01-08
+"""" @author: hanlins
+"""" @version: v1.2.0
 
 """" USE VUNDLE TO MANAGE PLUGINS
 "" First time user should install vundle before using, please clone vundle repo
@@ -36,6 +36,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'file:///home/gmarik/path/to/plugin'
 " Avoid a name conflict with L9
 " Plugin 'user/L9', {'name': 'newL9'}
+Plugin 'github/copilot.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
